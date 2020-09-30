@@ -1,0 +1,69 @@
+*{margin: 0; padding: 0; border: 0; color: white; box-sizing: border-box;}
+li{list-style: none;}
+html{font-size: 16pt;}
+body{background: #1b1f22;}
+html, body{width: 100%; height: 100%; overflow-y: scroll;}
+body::-webkit-scrollbar {width: 2px; height: 2px;}
+body::-webkit-scrollbar-track {width: 2px; height: 2px; background: transparent;}
+body::-webkit-scrollbar-thumb {background: #00FFC2; border-radius: 2px;}
+a{border-bottom: dotted 1px rgba(255, 255, 255, 0.5); text-decoration: none; color: inherit;}
+a:hover{border-bottom-color: transparent;}
+p{margin: 0 0 2rem 0;}
+ul{list-style: disc; margin: 0 0 2rem 0; padding-left: 1em;}
+#wrap {display: flex; flex-direction: column; align-items: center; justify-content: space-between; position: relative; min-height: 100vh; width: 100%; padding: 4rem 2rem; z-index: 3;}
+#wrap:before {content: ''; display: block;}
+
+/* NOTE: 제목태그 */
+	h1, h2{color: #ffffff; font-weight: 600; margin: 0 0 1rem 0; text-transform: uppercase;}
+	h2.major{border-bottom: solid 1px #ffffff; width: max-content; padding-bottom: 0.5rem; margin: 0 0 2rem 0;}
+	h1{font-size: 2.25rem; line-height: 1.3; letter-spacing: 0.5rem;}
+	h2{font-size: 1.5rem; line-height: 1.4; letter-spacing: 0.5rem; }
+/* NOTE: 이미지 */
+	.image{border-radius: 4px; border: 0; display: inline-block; position: relative;}
+	.image:before{pointer-events: none; background-image: url("../img/overlay.png"); background-color: rgba(19, 21, 25, 0.5); border-radius: 4px; content: ''; display: block; height: 100%; left: 0; opacity: 0.5; position: absolute; top: 0; width: 100%;}
+	.image > img{border-radius: 4px; display: block;}
+	.image.main{display: block; margin: 2.5rem 0; width: 100%;}
+	.image.main > img{width: 100%;}
+/* NOTE: 베경화면 */
+	div#bg{transform: scale(1.0); position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1;}
+	div#bg:before, div#bg:after{content: ''; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+	div#bg:before{-moz-transition: background-color 2.5s ease-in-out; -webkit-transition: background-color 2.5s ease-in-out; -ms-transition: background-color 2.5s ease-in-out; transition: background-color 2.5s ease-in-out; -moz-transition-delay: 0.75s; -webkit-transition-delay: 0.75s; -ms-transition-delay: 0.75s; transition-delay: 0.75s; background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../img/overlay.png"); background-size: auto, 256px 256px; background-position: center, center; background-repeat: no-repeat, repeat; z-index: 2;}
+	div#bg:after{-moz-transform: scale(1.125); -webkit-transform: scale(1.125); -ms-transform: scale(1.125); transform: scale(1.125); -moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out; -webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out; -ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out; transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out; background-image: url("https://www.bestuscasinos.org/wp-content/uploads/2019/12/Gambling-Mistake-1.jpg"); background-position: center; background-size: cover; background-repeat: no-repeat; z-index: 1; }
+	body.is-article-visible div#bg:after{transform: scale(1.0825);filter: blur(0.2rem);}
+	body.is-preload div#bg:before{background-color: #000000;}
+/* NOTE: 헤더 */
+	header#header {display: flex; flex-direction: column; align-items: center; transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out; background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%); max-width: 100%; text-align: center;}
+	header#header > * {transition: opacity 0.325s ease-in-out; position: relative; margin-top: 3.5rem;}
+	header#header > *:before {content: ''; display: block; position: absolute; top: calc(-3.5rem - 1px); left: calc(50% - 1px); width: 1px; height: calc(3.5rem + 1px); background: #ffffff;}
+	header#header > :first-child {margin-top: 0;}
+	header#header > :first-child:before {display: none;}
+	header#header > .logo {width: 5.5rem; height: 5.5rem; line-height: 5.5rem; border: solid 1px #ffffff; border-radius: 100%; overflow: hidden;}
+	header#header > .logo > span{display: block; height: 100%; background-image: url("http://edammade.kr/img/me.jpg"); background-size: cover; background-repeat: no-repeat; background-position: 0 -5px;}
+	header#header > .content {border-style: solid; border-color: #ffffff; border-top-width: 1px; border-bottom-width: 1px; max-width: 100%;}
+	header#header > .content .inner {transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out; transition-delay: 0.25s; padding: 3rem 2rem; max-height: 40rem; overflow: hidden;}
+	header#header > .content .inner > :last-child {margin-bottom: 0;}
+	header#header > .content p {text-transform: uppercase; letter-spacing: 0.2rem; font-size: 0.8rem; line-height: 2;}
+	header#header > nav ul {display: flex; margin-bottom: 0; list-style: none; padding-left: 0; border: solid 1px #ffffff; border-radius: 4px;}
+	header#header > nav ul li {padding-left: 0; border-left: solid 1px #ffffff;}
+	header#header > nav ul li:first-child {border-left: 0;}
+	header#header > nav ul li a {display: block; min-width: 7.5rem; height: 2.75rem; line-height: 2.75rem; padding: 0 1.25rem 0 1.45rem; text-transform: uppercase; letter-spacing: 0.2rem; font-size: 0.8rem; border-bottom: 0;}
+	header#header > nav ul li a:hover {background-color: rgba(255, 255, 255, 0.075);}
+	header#header > nav ul li a:active {background-color: rgba(255, 255, 255, 0.175);}
+	body.is-article-visible header#header {transform: scale(0.95);filter: blur(0.1rem);opacity: 0;}
+	body.is-preload header#header {filter: blur(0.125rem);}
+	body.is-preload header#header > * {opacity: 0;}
+	body.is-preload header#header .content .inner {max-height: 0; padding-top: 0; padding-bottom: 0; opacity: 0;}
+
+/* NOTE: 모달팝업 */
+	div#main{flex-grow: 1; flex-shrink: 1; display: flex; align-items: center; justify-content: center; flex-direction: column; position: relative; max-width: 100%; z-index: 3;}
+	div#main article{transform: translateY(0.25rem); transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out; padding: 4.5rem 2.5rem 1.5rem 2.5rem ; position: relative; width: 40rem; max-width: 100%; background-color: rgba(27, 31, 34, 0.85); border-radius: 4px; opacity: 0;}
+	div#main article.active{transform: translateY(0); opacity: 1;}
+	div#main article .close{display: block; position: absolute; top: 0; right: 0; width: 4rem; height: 4rem; cursor: pointer; text-indent: 4rem; overflow: hidden; white-space: nowrap;}
+	div#main article .close:before{transition: background-color 0.2s ease-in-out; content: ''; display: block; position: absolute; top: 0.75rem; left: 0.75rem; width: 2.5rem; height: 2.5rem; border-radius: 100%; background-position: center; background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23ffffff%3B stroke-width: 1%3B %7D%3C/style%3E%3Cline x1='2' y1='2' x2='18' y2='18' /%3E%3Cline x1='18' y1='2' x2='2' y2='18' /%3E%3C/svg%3E"); background-size: 20px 20px; background-repeat: no-repeat;}
+	div#main article .close:hover:before{background-color: rgba(255, 255, 255, 0.075);}
+	div#main article .close:active:before{background-color: rgba(255, 255, 255, 0.175);}
+/* NOTE: 푸터 */
+	footer#footer{transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out; width: 100%; max-width: 100%; margin-top: 2rem; text-align: center;}
+	footer#footer .copyright{letter-spacing: 0.2rem; font-size: 0.6rem; opacity: 0.75; margin-bottom: 0; text-transform: uppercase;}
+	body.is-article-visible footer#footer{transform: scale(0.95); filter: blur(0.1rem); opacity: 0;}
+	body.is-preload footer#footer{opacity: 0;}
