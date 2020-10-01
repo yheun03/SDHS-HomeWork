@@ -17,7 +17,7 @@
     
     .image.main {margin: 2rem 0;}
 
-    #wrap {padding: 2rem 1rem;}
+    #wrap {padding: 3rem 1rem;}
 
     #header > * {margin-top: 2rem;}
     #header > *:before {top: calc(-2rem - 1px); height: calc(2rem + 1px);}
@@ -35,7 +35,7 @@
 
     .image.main {margin: 1.5rem 0;}
 
-    #wrap {padding: 1rem;}
+    #wrap {padding: 3rem 1rem;}
 
     #header {padding: 1.5rem 0;}
     #header .content .inner {padding: 2.5rem 0;}
