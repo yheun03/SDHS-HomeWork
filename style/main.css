@@ -28,15 +28,18 @@ ul{list-style: disc; margin: 0 0 2rem 0; padding-left: 1em;}
 	span.image{border-radius: 4px; border: 0; display: inline-block; position: relative;}
 	span.image:before{pointer-events: none; background-image: url("../img/overlay.png"); background-color: rgba(19, 21, 25, 0.5); border-radius: 4px; content: ''; display: block; height: 100%; left: 0; opacity: 0.5; position: absolute; top: 0; width: 100%;}
 	span.image > div{border-radius: 4px; display: block;}
+	span.image > img{width: 100%; border-radius: 4px; display: block;}
 	span.image.main{display: block; margin: 2.5rem 0; width: 100%;}
 	span.image.main > div{width: 100%; height: 20vh;}
-	span.image.main > div#b40{width: 100%; height: 40vh;}
+	span.image.main > div.b40{width: 100%; height: 40vh;}
+	span.image.main > div.b30{width: 100%; height: 30vh;}
+	span.imageMb > img{display: none;}
 /* NOTE: 베경화면 */
-	div#bg{transform: scale(1.0); position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1;}
-	div#bg:before, div#bg:after{content: ''; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+	div#bg{transform: scale(1.25); position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 1;transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;  background-image: url("https://www.bestuscasinos.org/wp-content/uploads/2019/12/Gambling-Mistake-1.jpg"); }
+	div#bg:before{content: ''; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
 	div#bg:before{transition: background-color 2.5s ease-in-out; background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../img/overlay.png"); background-size: auto, 256px 256px; background-position: center, center; background-repeat: no-repeat, repeat; z-index: 2;}
-	div#bg:after{transform: scale(1.25); transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out; background-image: url("https://www.bestuscasinos.org/wp-content/uploads/2019/12/Gambling-Mistake-1.jpg"); background-position: center; background-size: cover; background-repeat: no-repeat; z-index: 1; }
-	body.is-article-visible div#bg:after{transform: scale(1.0825);filter: blur(0.2rem);}
+	/* div#bg:after{transform: scale(1.25); transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out; background-image: url("https://www.bestuscasinos.org/wp-content/uploads/2019/12/Gambling-Mistake-1.jpg"); background-position: center; background-size: cover; background-repeat: no-repeat; z-index: 1; } */
+	body.is-article-visible div#bg{transform: scale(1.0825);filter: blur(0.2rem);}
 	body.is-preload div#bg:before{background-color: #000000;}
 /* NOTE: 헤더 */
 	header#header{display: flex; flex-direction: column; align-items: center; transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out; background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%); max-width: 100%; text-align: center;}
@@ -50,12 +53,12 @@ ul{list-style: disc; margin: 0 0 2rem 0; padding-left: 1em;}
 	header#header > div.content div.inner{transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out; transition-delay: 0.25s; padding: 3rem 2rem; max-height: 40rem; overflow: hidden;}
 	header#header > div.content div.inner > :last-child{margin-bottom: 0;}
 	header#header > div.content p{text-transform: uppercase; letter-spacing: 0.2rem; font-size: 0.8rem; line-height: 2;}
-	header#header > nav ul{display: flex; margin-bottom: 0; list-style: none; padding-left: 0; border: solid 1px #ffffff; border-radius: 4px;}
-	header#header > nav ul li{padding-left: 0; border-left: solid 1px #ffffff;}
-	header#header > nav ul li:first-child{border-left: 0;}
-	header#header > nav ul li a{display: block; min-width: 7.5rem; height: 2.75rem; line-height: 2.75rem; padding: 0 1.25rem 0 1.45rem; text-transform: uppercase; letter-spacing: 0.2rem; font-size: 0.8rem; border-bottom: 0;}
-	header#header > nav ul li a:hover{background-color: rgba(255, 255, 255, 0.075);}
-	header#header > nav ul li a:active{background-color: rgba(255, 255, 255, 0.175);}
+	header#header > nav > ul{display: flex; margin-bottom: 0; list-style: none; padding-left: 0; border: solid 1px #ffffff; border-radius: 4px;}
+	header#header > nav > ul > li{padding-left: 0; border-left: solid 1px #ffffff;}
+	header#header > nav > ul > li:first-child{border-left: 0;}
+	header#header > nav > ul > li > a{display: block; min-width: 7.5rem; height: 2.75rem; line-height: 2.75rem; padding: 0 1.25rem 0 1.45rem; text-transform: uppercase; letter-spacing: 0.2rem; font-size: 0.8rem; border-bottom: 0;}
+	header#header > nav > ul > li > a:hover{background-color: rgba(255, 255, 255, 0.075);}
+	header#header > nav > ul > li > a:active{background-color: rgba(255, 255, 255, 0.175);}
 	body.is-article-visible header#header{transform: scale(0.95);filter: blur(0.1rem);opacity: 0;}
 	body.is-preload header#header{filter: blur(0.125rem);}
 	body.is-preload header#header > *{opacity: 0;}

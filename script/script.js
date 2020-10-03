@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	(function($) {
+		// NOTE: 도박과 관련된 명언 슬라이드
 		let ws = $("#wise_saying > span");
 		let min = 0;
 		let max = ws.length-1;
@@ -11,6 +12,15 @@ $(document).ready(function(){
 			if(RandVal>max)RandVal=0;
 			$(ws[RandVal]).animate({"top":0})
 		}, 3000)
+
+		// NOTE: 각 메뉴당 배경화면 변경
+		// for(let i = 2; i <= 3; i++){
+		// 	$("header ul li:nth-child("+i+")").click(function(){
+		// 		setTimeout(function(){
+		// 			$("#bg").css({"background-image": "url('../img/GamblingProblems3.png')"})
+		// 		}, 100)
+		// 	})
+		// }
 
 		let	$window = $(window),
 			$body = $('body'),

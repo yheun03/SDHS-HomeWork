@@ -17,6 +17,9 @@
     
     .image.main {margin: 2rem 0;}
 
+    span.imagePc > div{display: none;}
+    span.imageMb > img{display: block;}
+
     #wrap {padding: 3rem 1rem;}
 
     #header > * {margin-top: 2rem;}
